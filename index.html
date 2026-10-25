@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+<title>Float Todo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="ball" title="Todo"><span id="ballCount">0</span></div>
+
+  <div id="panel">
+    <header id="head">
+      <div class="title"><strong>Todo</strong><span id="today"></span></div>
+      <div class="head-actions">
+        <button id="sync" title="Import next 7 days from Calendar (macOS)">
+          <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 4v4h-4M20 12a8 8 0 0 1-14 5.3M4 20v-4h4"/></svg>
+        </button>
+        <button id="transp" title="Background transparency">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <button id="pin" title="Keep open">
+          <svg viewBox="0 0 24 24"><path d="M9 3h6l-1 6 4 4H6l4-4zM12 13v8"/></svg>
+        </button>
+      </div>
+      <div id="opacityPop">
+        <div class="lbl"><span>Background</span><span id="opacityVal">74%</span></div>
+        <input id="opacitySlider" type="range" min="20" max="100" step="2" value="74">
+      </div>
+    </header>
+
+    <nav id="tabs"></nav>
+    <main id="list"></main>
+
+    <footer>
+      <input id="new" type="text" placeholder="Add new todo   (#category @date)" autocomplete="off">
+      <div class="add-opts">
+        <input id="cat" list="catlist" placeholder="category" autocomplete="off">
+        <datalist id="catlist"></datalist>
+        <input id="due" type="date">
+      </div>
+    </footer>
+    <div id="toast"></div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

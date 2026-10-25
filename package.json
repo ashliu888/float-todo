@@ -1,0 +1,21 @@
+{
+  "name": "float-todo",
+  "version": "1.0.0",
+  "description": "Always-on-top floating to-do widget",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.local.floattodo",
+    "productName": "Float Todo",
+    "mac": { "category": "public.app-category.productivity", "target": "dmg",
+      "extendInfo": { "NSCalendarsUsageDescription": "Import upcoming events as to-dos.",
+                      "NSAppleEventsUsageDescription": "Read events from Calendar." } }
+  }
+}
